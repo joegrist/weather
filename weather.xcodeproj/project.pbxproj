@@ -17,6 +17,16 @@
 		10D3BC2D27634FFA0057B731 /* weatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D3BC2C27634FFA0057B731 /* weatherTests.swift */; };
 		10D3BC3727634FFA0057B731 /* weatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D3BC3627634FFA0057B731 /* weatherUITests.swift */; };
 		10D3BC3927634FFA0057B731 /* weatherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D3BC3827634FFA0057B731 /* weatherUITestsLaunchTests.swift */; };
+		10D3BC472763522F0057B731 /* SwiftMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 10D3BC462763522F0057B731 /* SwiftMessages */; };
+		10D3BC492763624B0057B731 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D3BC482763624B0057B731 /* App.swift */; };
+		10D3BC4E2763660E0057B731 /* LocationSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D3BC4D2763660E0057B731 /* LocationSearchResponse.swift */; };
+		10D3BC502763670A0057B731 /* CurrentWeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D3BC4F2763670A0057B731 /* CurrentWeatherResponse.swift */; };
+		10D3BC5227636C910057B731 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D3BC5127636C910057B731 /* Logger.swift */; };
+		10D3BC54276371B70057B731 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D3BC53276371B70057B731 /* WeatherManager.swift */; };
+		10D3BC572763EC800057B731 /* Decoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D3BC562763EC800057B731 /* Decoders.swift */; };
+		10D3BC592763ECA40057B731 /* ApiReal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D3BC582763ECA40057B731 /* ApiReal.swift */; };
+		10D3BC5B2763ECC90057B731 /* ApiMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D3BC5A2763ECC90057B731 /* ApiMock.swift */; };
+		10D3BC5D2763ED0E0057B731 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D3BC5C2763ED0E0057B731 /* Api.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +61,15 @@
 		10D3BC3227634FFA0057B731 /* weatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = weatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		10D3BC3627634FFA0057B731 /* weatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherUITests.swift; sourceTree = "<group>"; };
 		10D3BC3827634FFA0057B731 /* weatherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		10D3BC482763624B0057B731 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		10D3BC4D2763660E0057B731 /* LocationSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchResponse.swift; sourceTree = "<group>"; };
+		10D3BC4F2763670A0057B731 /* CurrentWeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherResponse.swift; sourceTree = "<group>"; };
+		10D3BC5127636C910057B731 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		10D3BC53276371B70057B731 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
+		10D3BC562763EC800057B731 /* Decoders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoders.swift; sourceTree = "<group>"; };
+		10D3BC582763ECA40057B731 /* ApiReal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiReal.swift; sourceTree = "<group>"; };
+		10D3BC5A2763ECC90057B731 /* ApiMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiMock.swift; sourceTree = "<group>"; };
+		10D3BC5C2763ED0E0057B731 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10D3BC472763522F0057B731 /* SwiftMessages in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,7 +121,10 @@
 		10D3BC1127634FF80057B731 /* weather */ = {
 			isa = PBXGroup;
 			children = (
+				10D3BC552763EC580057B731 /* Api */,
+				10D3BC4C2763657F0057B731 /* Data */,
 				10D3BC1227634FF80057B731 /* AppDelegate.swift */,
+				10D3BC53276371B70057B731 /* WeatherManager.swift */,
 				10D3BC1427634FF90057B731 /* SceneDelegate.swift */,
 				10D3BC1627634FF90057B731 /* ViewController.swift */,
 				10D3BC1827634FF90057B731 /* Main.storyboard */,
@@ -109,6 +132,8 @@
 				10D3BC2027634FFA0057B731 /* LaunchScreen.storyboard */,
 				10D3BC2327634FFA0057B731 /* Info.plist */,
 				10D3BC1B27634FF90057B731 /* weather.xcdatamodeld */,
+				10D3BC482763624B0057B731 /* App.swift */,
+				10D3BC5127636C910057B731 /* Logger.swift */,
 			);
 			path = weather;
 			sourceTree = "<group>";
@@ -130,6 +155,26 @@
 			path = weatherUITests;
 			sourceTree = "<group>";
 		};
+		10D3BC4C2763657F0057B731 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				10D3BC4D2763660E0057B731 /* LocationSearchResponse.swift */,
+				10D3BC4F2763670A0057B731 /* CurrentWeatherResponse.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		10D3BC552763EC580057B731 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				10D3BC5C2763ED0E0057B731 /* Api.swift */,
+				10D3BC562763EC800057B731 /* Decoders.swift */,
+				10D3BC582763ECA40057B731 /* ApiReal.swift */,
+				10D3BC5A2763ECC90057B731 /* ApiMock.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +191,9 @@
 			dependencies = (
 			);
 			name = weather;
+			packageProductDependencies = (
+				10D3BC462763522F0057B731 /* SwiftMessages */,
+			);
 			productName = weather;
 			productReference = 10D3BC0F27634FF80057B731 /* weather.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +266,9 @@
 				Base,
 			);
 			mainGroup = 10D3BC0627634FF80057B731;
+			packageReferences = (
+				10D3BC452763522F0057B731 /* XCRemoteSwiftPackageReference "SwiftMessages" */,
+			);
 			productRefGroup = 10D3BC1027634FF80057B731 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -261,9 +312,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10D3BC4E2763660E0057B731 /* LocationSearchResponse.swift in Sources */,
+				10D3BC572763EC800057B731 /* Decoders.swift in Sources */,
+				10D3BC5B2763ECC90057B731 /* ApiMock.swift in Sources */,
+				10D3BC502763670A0057B731 /* CurrentWeatherResponse.swift in Sources */,
+				10D3BC54276371B70057B731 /* WeatherManager.swift in Sources */,
 				10D3BC1D27634FF90057B731 /* weather.xcdatamodeld in Sources */,
+				10D3BC5D2763ED0E0057B731 /* Api.swift in Sources */,
 				10D3BC1727634FF90057B731 /* ViewController.swift in Sources */,
 				10D3BC1327634FF80057B731 /* AppDelegate.swift in Sources */,
+				10D3BC492763624B0057B731 /* App.swift in Sources */,
+				10D3BC5227636C910057B731 /* Logger.swift in Sources */,
+				10D3BC592763ECA40057B731 /* ApiReal.swift in Sources */,
 				10D3BC1527634FF90057B731 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -608,6 +668,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		10D3BC452763522F0057B731 /* XCRemoteSwiftPackageReference "SwiftMessages" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftKickMobile/SwiftMessages";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		10D3BC462763522F0057B731 /* SwiftMessages */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 10D3BC452763522F0057B731 /* XCRemoteSwiftPackageReference "SwiftMessages" */;
+			productName = SwiftMessages;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		10D3BC1B27634FF90057B731 /* weather.xcdatamodeld */ = {
