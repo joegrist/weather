@@ -15,8 +15,8 @@ class ForecastCell: BaseCell {
 }
 
 class TodayForecastCell: ForecastCell {
-    @IBOutlet weak var maxTemp: UILabel?
-    @IBOutlet weak var minTemp: UILabel?
+    @IBOutlet weak var maxMinTemp: UILabel?
+    @IBOutlet weak var location: UILabel?
     @IBOutlet weak var windSpeed: UILabel?
 }
 

@@ -5,12 +5,35 @@ struct ManagerError: Error, LocalizedError {
 }
 
 class WeatherManager {
-    func post(error: App.Error, diagnostic: String) {
-        NotificationCenter.default.post(name: App.errorNotification, object: nil, userInfo: [App.errorNotificationMessageUserInfoKey : error.rawValue])
-        App.instance.logger.log(diagnostic)
+    
+    static let location = "Brisbane"
+    
+    func post(title: String? = nil, message: String, type: App.MessageType, diagnostic: String? = nil) {
+        
+        let realTitle: String
+        if let title = title {
+            realTitle = title
+        } else {
+            realTitle = type == .Error ? "Error" : "Done"
+        }
+        
+        let userInfo: [String : Any] = [
+            App.notificationMessageUserInfoKey : message,
+            App.notificationTypeUserInfoKey : type.rawValue,
+            App.notificationTitleUserInfoKey: realTitle
+        ]
+        
+        NotificationCenter.default.post(name: App.messageNotification, object: nil, userInfo: userInfo)
+        
+        if let diagnostic = diagnostic {
+            App.instance.logger.log(diagnostic)
+        }
     }
     
+    
     func refresh() async {
+        
+        NotificationCenter.default.post(name: App.newDataRequested, object: nil)
         
         var woeid: Int
         var weather: CurrentWeatherResponse
@@ -18,14 +41,14 @@ class WeatherManager {
         do {
             woeid = try await queryLocation()
         } catch {
-            post(error: .Api, diagnostic: "Fetching weather failed")
+            post(message: App.Error.Api.rawValue, type: .Error, diagnostic: "Fetching weather failed")
             return
         }
 
         do {
             weather = try await getCurrentWeather(for: woeid)
         } catch {
-            post(error: .NoData, diagnostic: "No weather was found")
+            post(message: App.Error.NoData.rawValue, type: .Error, diagnostic: "No weather was found")
             return
         }
         
@@ -33,15 +56,16 @@ class WeatherManager {
         
         save(weather: weather)
         
+        post(title: "You're up to date!",  message: "Got latest weather for \(WeatherManager.location)", type: .Success)
         NotificationCenter.default.post(name: App.newDataIsReady, object: nil)
     }
     
     func queryLocation() async throws -> Int {
         
-        let locations = try await App.instance.api.locationSearch(term: "Brisbane")
+        let locations = try await App.instance.api.locationSearch(term: WeatherManager.location)
         guard let location = locations?.first else {
             // TODO: Would need a UI to resolve
-            throw ManagerError(error: .NoData)
+            throw ManagerError(error: App.Error.NoData)
         }
         
         return location.woeid

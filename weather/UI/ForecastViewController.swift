@@ -1,12 +1,4 @@
-//
-//  ViewController.swift
-//  weather
-//
-//  Created by Joseph Grist on 10/12/21.
-//
-
 import UIKit
-import SwiftMessages
 
 class ForecastViewController: UICollectionViewController {
 
@@ -16,10 +8,6 @@ class ForecastViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        NotificationCenter.default.addObserver(forName: App.errorNotification, object: nil, queue: .main) {
-            [weak self] notification in self?.handleError(notification: notification)
-        }
         
         NotificationCenter.default.addObserver(forName: App.newDataIsReady, object: nil, queue: .main) {
             [weak self] notification in self?.onNewDataReady(notification: notification)
@@ -48,9 +36,9 @@ class ForecastViewController: UICollectionViewController {
                 
                 setCommon(weather: weather, cell: cell)
                 
-                cell.maxTemp?.text = weather.minTempFormatted
-                cell.minTemp?.text = weather.maxTempFormatted
-                cell.windSpeed?.text = weather.windSpeedFormatted
+                cell.maxMinTemp?.text = "Min \(weather.minTempFormatted) Top \(weather.maxTempFormatted)"
+                cell.windSpeed?.text = "Wind \(weather.windSpeedFormatted)"
+                cell.location?.text = WeatherManager.location
                 
                 return cell
             case .UpcomingDays:
@@ -115,23 +103,10 @@ class ForecastViewController: UICollectionViewController {
             await App.instance.weatherManager.refresh()
         }
     }
-    
-    func handleError(notification: Notification) {
-        guard
-            let userInfo = notification.userInfo,
-            let error = userInfo[App.errorNotificationMessageUserInfoKey] as? String else {
-                return
-            }
-        let view = MessageView.viewFromNib(layout: .cardView)
-        view.configureTheme(.warning)
-        view.configureContent(title: "Error", body: error, iconImage: UIImage(systemName: "exclamationmark.triangle")!)
-        SwiftMessages.show(view: view)
-    }
 
     func update(animated: Bool) {
         let snapshot = App.instance.weatherManager.makeSnapshot()
         dataSource?.apply(snapshot, animatingDifferences: animated)
-        refreshControl.endRefreshing()
         collectionView.reloadData()
     }
     
@@ -184,7 +159,7 @@ class ForecastViewController: UICollectionViewController {
     }
     
     @objc func didPullToRefresh(_ sender: AnyObject?) {
-        refreshControl.beginRefreshing()
+        refreshControl.endRefreshing()
         getNewWeather()
     }
 }

@@ -31,6 +31,7 @@
 		10D3BC62276423460057B731 /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D3BC61276423460057B731 /* Cells.swift */; };
 		10D3BC642764B2F40057B731 /* WeatherHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10D3BC632764B2F40057B731 /* WeatherHeader.xib */; };
 		10D3BC672765B6E30057B731 /* CurrentWeather+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D3BC652765B6E30057B731 /* CurrentWeather+CoreDataClass.swift */; };
+		10D3BC6A2765FD160057B731 /* ContainerViewController.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D3BC692765FD160057B731 /* ContainerViewController.swift.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		10D3BC61276423460057B731 /* Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
 		10D3BC632764B2F40057B731 /* WeatherHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherHeader.xib; sourceTree = "<group>"; };
 		10D3BC652765B6E30057B731 /* CurrentWeather+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CurrentWeather+CoreDataClass.swift"; path = "weather/Data/CurrentWeather+CoreDataClass.swift"; sourceTree = "<group>"; };
+		10D3BC692765FD160057B731 /* ContainerViewController.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 				10D3BC1627634FF90057B731 /* ForecastViewController.swift */,
 				10D3BC61276423460057B731 /* Cells.swift */,
 				10D3BC632764B2F40057B731 /* WeatherHeader.xib */,
+				10D3BC692765FD160057B731 /* ContainerViewController.swift.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				10D3BC5227636C910057B731 /* Logger.swift in Sources */,
 				10D3BC592763ECA40057B731 /* ApiReal.swift in Sources */,
 				10D3BC1527634FF90057B731 /* SceneDelegate.swift in Sources */,
+				10D3BC6A2765FD160057B731 /* ContainerViewController.swift.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

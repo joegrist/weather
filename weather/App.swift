@@ -19,9 +19,17 @@ class App {
         case NoData = "Could not find any weather for your location"
     }
     
+    enum MessageType: Int {
+        case Success
+        case Error
+    }
+    
+    static let newDataRequested = NSNotification.Name("newDataRequested")
     static let newDataIsReady = NSNotification.Name("newDataIsReady")
-    static let errorNotification = NSNotification.Name("errorNotification")
-    static let errorNotificationMessageUserInfoKey = "errorNotificationMessageUserInfoKey"
+    static let messageNotification = NSNotification.Name("messageNotification")
+    static let notificationMessageUserInfoKey = "errorNotificationMessageUserInfoKey"
+    static let notificationTypeUserInfoKey = "notificationTypeUserInfoKey"
+    static let notificationTitleUserInfoKey = "notificationTitleUserInfoKey"
     
     static let woeIdBrisbane = 1100661
     static let woeIdHobart = 1102670

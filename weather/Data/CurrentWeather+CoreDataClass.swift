@@ -30,7 +30,7 @@ public class CurrentWeather: NSManagedObject {
     }
     
     var windSpeedFormatted: String {
-        return "\(Int(round(windSpeed)))mph"
+        return "\(Int(round(windSpeed * 1.609344)))km/h"
     }
     
     var icon: UIImage? {
