@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import UIKit
+import CoreData
 
 class App {
     
@@ -26,7 +28,8 @@ class App {
     
     var api: Api = ApiReal()
     let logger = Logger()
-    let manager = WeatherManager()
+    let weatherManager = WeatherManager()
+    let dataManager = DataManager()
     
     func testMode() {
         api = ApiMock()
